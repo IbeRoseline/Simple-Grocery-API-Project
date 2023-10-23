@@ -1,0 +1,575 @@
+{
+	"id": "1c784196-65fd-47a9-8ee7-06941f7edc36",
+	"name": "Simple Grocery API",
+	"timestamp": "2023-10-23T10:54:50.408Z",
+	"collection_id": "29076551-2e9495db-984d-479a-8318-1058864ecffd",
+	"folder_id": 0,
+	"environment_id": "29076551-0f0783a2-4c58-49cb-a852-61e480fb2b1a",
+	"totalPass": 26,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-10-23T10:54:15.890Z",
+	"totalFail": 4,
+	"results": [
+		{
+			"id": "23259b2d-38f8-4830-934e-084cfedb94a5",
+			"name": "Status",
+			"url": "http://simple-grocery-store-api.online//status",
+			"time": 6177,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response has the required field - status": true,
+				"Status is a non-empty string": true,
+				"Response time is less than 500ms": false,
+				"Response header contains the expected content type": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required field - status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response header contains the expected content type": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6177
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response has the required field - status": true,
+					"Status is a non-empty string": true,
+					"Response time is less than 500ms": false,
+					"Response header contains the expected content type": true
+				}
+			]
+		},
+		{
+			"id": "95dd3875-0565-4f9d-932f-e31af74ad263",
+			"name": "API Authentication",
+			"url": "http://simple-grocery-store-api.online//api-clients",
+			"time": 1801,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				1801
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "322d2ebb-e942-4a13-93d1-3e44abe790b5",
+			"name": "All Products",
+			"url": "http://simple-grocery-store-api.online//products",
+			"time": 1089,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Validate the response body is an array": true,
+				"Validate that the 'id' is a non-negative integer": true,
+				"Validate that the 'category' is a non-empty string": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate the response body is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate that the 'id' is a non-negative integer": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate that the 'category' is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1089
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Validate the response body is an array": true,
+					"Validate that the 'id' is a non-negative integer": true,
+					"Validate that the 'category' is a non-empty string": true
+				}
+			]
+		},
+		{
+			"id": "3d8fdb4f-3ed4-464b-9922-884e67836f95",
+			"name": "Get a Product",
+			"url": "http://simple-grocery-store-api.online//products/4643",
+			"time": 1029,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Category is a non-empty string": true,
+				"Name is a non-empty string": true,
+				"Manufacturer is a non-empty string": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Category is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Name is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Manufacturer is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1029
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Category is a non-empty string": true,
+					"Name is a non-empty string": true,
+					"Manufacturer is a non-empty string": true
+				}
+			]
+		},
+		{
+			"id": "5fac2a0c-defb-4036-ace3-540a96850a31",
+			"name": "Create a Cart",
+			"url": "http://simple-grocery-store-api.online//carts",
+			"time": 1620,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Response status code is 201": true,
+				"Response has the required fields": true,
+				"cartId is a non-empty string": true,
+				"Response time is less than 500ms": false,
+				"Validate that the 'created' field is set to true": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"cartId is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Validate that the 'created' field is set to true": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1620
+			],
+			"allTests": [
+				{
+					"Response status code is 201": true,
+					"Response has the required fields": true,
+					"cartId is a non-empty string": true,
+					"Response time is less than 500ms": false,
+					"Validate that the 'created' field is set to true": true
+				}
+			]
+		},
+		{
+			"id": "234865eb-ba72-477e-a00f-de7735fa9ec0",
+			"name": "Get a Cart",
+			"url": "http://simple-grocery-store-api.online//carts/PaRqErouqg2xm7cSu3qTs",
+			"time": 890,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				890
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "5d8865a7-cac7-4adb-9cee-736ed0aa0f3a",
+			"name": "Get a Cart Item",
+			"url": "http://simple-grocery-store-api.online//carts/PaRqErouqg2xm7cSu3qTs/items",
+			"time": 3132,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3132
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6fa300b2-d631-4b2a-9e98-b6dd2cb1eeb5",
+			"name": "Add an Item",
+			"url": "http://simple-grocery-store-api.online//carts/PaRqErouqg2xm7cSu3qTs/items/",
+			"time": 1436,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				1436
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e7aee5fc-7f1c-4782-bc66-0af64d440513",
+			"name": "Modify a Cart Item",
+			"url": "http://simple-grocery-store-api.online//carts/PaRqErouqg2xm7cSu3qTs/items/73564538",
+			"time": 1969,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				1969
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "687587b4-b5b7-4349-8250-9accdf090ee9",
+			"name": "Replace Cart Item",
+			"url": "http://simple-grocery-store-api.online//carts/PaRqErouqg2xm7cSu3qTs/items/73564538",
+			"time": 2859,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				2859
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f1913b88-8d2a-49d7-b7fe-7a78bb5ddeed",
+			"name": "Delete Cart Item",
+			"url": "http://simple-grocery-store-api.online//carts/PaRqErouqg2xm7cSu3qTs/items/517455090",
+			"time": 971,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				971
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "55803d34-a7e6-4a41-820f-329a0cd3a8f5",
+			"name": "Create an Order",
+			"url": "http://simple-grocery-store-api.online//orders",
+			"time": 926,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				926
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d58cf070-1a5e-4edd-8189-9be3e34de200",
+			"name": "Get all Order",
+			"url": "http://simple-grocery-store-api.online//orders",
+			"time": 3378,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Response status code is 200": true,
+				"Response is an array": true,
+				"Response array is empty": true,
+				"Response time is less than 200ms": false,
+				"Validate that the response has the required fields": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response array is empty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Validate that the response has the required fields": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3378
+			],
+			"allTests": [
+				{
+					"Response status code is 200": true,
+					"Response is an array": true,
+					"Response array is empty": true,
+					"Response time is less than 200ms": false,
+					"Validate that the response has the required fields": true
+				}
+			]
+		},
+		{
+			"id": "3365e099-fe96-4cd8-91fe-5170911224de",
+			"name": "Get a Single Oder",
+			"url": "http://simple-grocery-store-api.online//orders/AmM8mFpZHxbX8Oa47SDkO",
+			"time": 899,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Response status code is 404": true,
+				"Response has an error message": true,
+				"Error message is a non-empty string": true,
+				"Error message is descriptive and user-friendly": true,
+				"Response time is less than 500ms": false
+			},
+			"testPassFailCounts": {
+				"Response status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response has an error message": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error message is a non-empty string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error message is descriptive and user-friendly": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				899
+			],
+			"allTests": [
+				{
+					"Response status code is 404": true,
+					"Response has an error message": true,
+					"Error message is a non-empty string": true,
+					"Error message is descriptive and user-friendly": true,
+					"Response time is less than 500ms": false
+				}
+			]
+		},
+		{
+			"id": "706e6529-1146-42b3-b8a6-c8e490058589",
+			"name": "Update Order",
+			"url": "http://simple-grocery-store-api.online//orders/AmM8mFpZHxbX8Oa47SDkO",
+			"time": 3523,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Response status code is 404": true,
+				"The 'error' field is not empty": true
+			},
+			"testPassFailCounts": {
+				"Response status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"The 'error' field is not empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3523
+			],
+			"allTests": [
+				{
+					"Response status code is 404": true,
+					"The 'error' field is not empty": true
+				}
+			]
+		},
+		{
+			"id": "607ecd49-adc7-4988-8820-523d50913832",
+			"name": "Delete Order",
+			"url": "http://simple-grocery-store-api.online//orders/AmM8mFpZHxbX8Oa47SDkO",
+			"time": 882,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				882
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 32581,
+	"collection": {
+		"requests": [
+			{
+				"id": "23259b2d-38f8-4830-934e-084cfedb94a5",
+				"method": "GET"
+			},
+			{
+				"id": "95dd3875-0565-4f9d-932f-e31af74ad263",
+				"method": "POST"
+			},
+			{
+				"id": "322d2ebb-e942-4a13-93d1-3e44abe790b5",
+				"method": "GET"
+			},
+			{
+				"id": "3d8fdb4f-3ed4-464b-9922-884e67836f95",
+				"method": "GET"
+			},
+			{
+				"id": "5fac2a0c-defb-4036-ace3-540a96850a31",
+				"method": "POST"
+			},
+			{
+				"id": "234865eb-ba72-477e-a00f-de7735fa9ec0",
+				"method": "GET"
+			},
+			{
+				"id": "5d8865a7-cac7-4adb-9cee-736ed0aa0f3a",
+				"method": "GET"
+			},
+			{
+				"id": "6fa300b2-d631-4b2a-9e98-b6dd2cb1eeb5",
+				"method": "POST"
+			},
+			{
+				"id": "e7aee5fc-7f1c-4782-bc66-0af64d440513",
+				"method": "PATCH"
+			},
+			{
+				"id": "687587b4-b5b7-4349-8250-9accdf090ee9",
+				"method": "PUT"
+			},
+			{
+				"id": "f1913b88-8d2a-49d7-b7fe-7a78bb5ddeed",
+				"method": "DELETE"
+			},
+			{
+				"id": "55803d34-a7e6-4a41-820f-329a0cd3a8f5",
+				"method": "POST"
+			},
+			{
+				"id": "d58cf070-1a5e-4edd-8189-9be3e34de200",
+				"method": "GET"
+			},
+			{
+				"id": "3365e099-fe96-4cd8-91fe-5170911224de",
+				"method": "GET"
+			},
+			{
+				"id": "706e6529-1146-42b3-b8a6-c8e490058589",
+				"method": "PATCH"
+			},
+			{
+				"id": "607ecd49-adc7-4988-8820-523d50913832",
+				"method": "DELETE"
+			}
+		]
+	}
+}
